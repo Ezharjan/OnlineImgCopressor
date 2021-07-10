@@ -110,8 +110,8 @@
                                 <!-- <h1 class="hero-title h2-mobile mt-0 is-revealing">Image Compressor</h1> -->
                                 <h1 class="hero-title h2-mobile mt-0 is-revealing">免费在线图片压缩</h1>
                                 <!-- <p class="hero-paragraph is-revealing">|无损压缩</p> -->
-                                <p class="hero-paragraph is-revealing">| jpeg, jpg, png, bmp, etc.
-                                </p>
+                                <!-- <p class="hero-paragraph is-revealing">| jpeg, jpg, png, bmp, etc. -->
+                                <p class="hero-paragraph is-revealing" style="font-size: 5px;">先设置，再上传，后下载</p>
                                 <div>
                                     <div class="configuration">
                                         <span style="text-align:left">压缩比例：</span>
@@ -511,11 +511,12 @@
                     btnDownload.style.backgroundColor = "#6a62f0";
                     btnDownload.onclick = function () {
                         cb();
+                        console.warn("hahaha")
                         btnDownload.onclick = null;
                         btnDownload.style.color = "";
                         btnDownload.style.borderColor = "";
                         // refresh the webpage in case of other errors
-                        window.location.reload();
+                        //window.location.reload();
                     }
                 },
                 ChangeBefore: function () {

@@ -487,6 +487,7 @@
     <script src="dist/js/main.min.js"></script>
     <script src="dist/js/jszip.min.js"></script>
     <script src="dist/js/FileSaver.js"></script>
+    <script src="dist/js/osCheck.js"></script>
     <script src="dist/js/JCompressor.js"></script>
     <script>
         document.getElementById("fileinput").addEventListener("change", inputchange)
@@ -511,11 +512,10 @@
                     btnDownload.style.backgroundColor = "#6a62f0";
                     btnDownload.onclick = function () {
                         cb();
-                        console.warn("hahaha")
-                        btnDownload.onclick = null;
-                        btnDownload.style.color = "";
-                        btnDownload.style.borderColor = "";
-                        // refresh the webpage in case of other errors
+                        //btnDownload.onclick = null;
+                        //btnDownload.style.color = "";
+                        //btnDownload.style.borderColor = "";
+                        // close the codes above or refresh the webpage in case of other errors
                         //window.location.reload();
                     }
                 },

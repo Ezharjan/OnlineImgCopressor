@@ -312,54 +312,11 @@ function JCompressor(_this, option) {
             });
         }
     }
-
-    function dataURLtoBlob(dataurl) {
-        var arr = dataurl.split(","),
-            mime = arr[0].match(/:(.*?);/)[1],
-            bstr = atob(arr[1]),
-            n = bstr.length,
-            u8arr = new Uint8Array(n);
-        while (n--) {
-            u8arr[n] = bstr.charCodeAt(n);
-        }
-        return new Blob([u8arr], { type: mime });
-    }
-
-    function downloadFile(url, name = "What's the fuvk") {
-        var a = document.createElement("a");
-        a.setAttribute("href", url);
-        a.setAttribute("download", name);
-        a.setAttribute("target", "_blank");
-        let clickEvent = document.createEvent("MouseEvents");
-        clickEvent.initEvent("click", true, true);
-        a.dispatchEvent(clickEvent);
-    }
-
-    function downloadFileByBase64(base64, name) {
-        var myBlob = dataURLtoBlob(base64);
-        var myUrl = URL.createObjectURL(myBlob);
-        downloadFile(myUrl, name);
-    }
-    // 判断浏览器函数
-    function isMobile() {
-        if (
-            window.navigator.userAgent.match(
-                /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
-            )
-        ) {
-            return true; // 移动端
-        } else {
-            return false; // PC端
-        }
-    }
     function DownloadFile(fileName, content) {
-        if(isMobile()){
+        if (isMobile()) {
             window.alert("长按图片并点击保存即可！");
-        }else{
+        } else {
             saveAs(content, fileName);
         }
-        // let imgs = document.getElementById("imgbox").children;
-        // let img0 = imgs && imgs[0] && imgs[0].currentSrc;
-        // downloadFileByBase64(img0, "hello");
     }
 }
